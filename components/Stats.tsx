@@ -7,14 +7,14 @@ const METRICS = [
     value: 97,
     suffix: '%',
     label: 'Billing Error Reduction',
-    sub: '2.3% → 0.06% — Teladoc, 50K+ members',
+    sub: '2.3% → 0.06% - Teladoc, 50K+ members',
     decimals: 0,
   },
   {
     value: 1.5,
     suffix: 'M+',
     label: 'Records Reconciled',
-    sub: 'Legacy SAS ↔ 1CDP — error rate: zero',
+    sub: 'Legacy SAS ↔ 1CDP - error rate: zero',
     decimals: 1,
   },
   {

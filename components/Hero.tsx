@@ -76,7 +76,7 @@ export default function Hero() {
             mounted ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
           }`}
         >
-          Eight years building pipelines that don&apos;t lie — across national public health
+          Eight years building pipelines that don&apos;t lie - across national public health
           infrastructure, enterprise billing operations, and AI-augmented analytics tooling.
         </p>
 

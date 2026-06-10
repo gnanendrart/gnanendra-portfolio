@@ -15,8 +15,8 @@ const FOCUS_AREAS = [
 
 const QUICK_FACTS = [
   { icon: '📍', text: 'Calgary, Alberta, Canada' },
-  { icon: '🎓', text: 'M.S. Information Management — UIUC' },
-  { icon: '🇨🇦', text: 'Permanent Resident — eligible to work in Canada' },
+  { icon: '🎓', text: 'M.S. Information Management - UIUC' },
+  { icon: '🇨🇦', text: 'Permanent Resident - eligible to work in Canada' },
   { icon: '💼', text: 'Open to Senior Analyst / Data Engineer roles' },
 ];
 
@@ -58,21 +58,21 @@ export default function About() {
             <p>
               Most data problems aren&apos;t obvious. They hide in ID mismatches, undocumented
               format changes, and edge cases that survived every test because nobody thought
-              to look for them. I&apos;ve spent eight years learning to find those problems —
+              to look for them. I&apos;ve spent eight years learning to find those problems -
               starting in claims and logistics systems, then at national scale across public
               health infrastructure, and in enterprise billing operations.
             </p>
             <p>
               At CDC, I traced a pipeline discrepancy across 1.5M+ records to facility ID
               mismatches that had been corrupting weekly rate comparisons for months. At
-              Teladoc, I rebuilt a billing reconciliation process from the root cause up —
+              Teladoc, I rebuilt a billing reconciliation process from the root cause up -
               dropping data loss from 2.3% to 0.06% across 50,000+ enterprise members. The
               method is always the same: follow the data until the number makes sense.
             </p>
             <p>
               Beyond the investigation work, I build. My side projects use Claude, Apify, and
               Python to automate things that analysts spend too many hours doing by hand.
-              These aren&apos;t demos — they run in production on real infrastructure.
+              These aren&apos;t demos - they run in production on real infrastructure.
             </p>
             <p>
               Currently based in Calgary. M.S. in Information Management from the University
