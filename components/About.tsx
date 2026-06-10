@@ -72,7 +72,7 @@ export default function About() {
             <p>
               Beyond the investigation work, I build. My side projects use Claude, Apify, and
               Python to automate things that analysts spend too many hours doing by hand.
-              These aren&apos;t demos - they run in production on real infrastructure.
+              These aren&apos;t demos. They run in production on real infrastructure.
             </p>
             <p>
               Currently based in Calgary. M.S. in Information Management from the University

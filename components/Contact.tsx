@@ -68,7 +68,7 @@ export default function Contact() {
         {/* Message */}
         <p className="text-slate-400 text-lg leading-relaxed mb-4 max-w-lg mx-auto">
           Open to senior data roles where pipeline reliability and data quality are real
-          requirements - not aspirations.
+          requirements, not aspirations.
         </p>
         <p className="text-slate-600 text-sm mb-12">
           Healthcare, fintech, public sector, or any domain where the data actually matters.

@@ -24,7 +24,7 @@ const PROJECTS = [
     statusColor: 'green',
     tagline: 'End-to-end job pipeline automation',
     description:
-      'A full-stack automation tool that handles everything a job seeker does manually - at machine speed. Scrapes fresh listings from multiple boards via Apify, ATS-scores each against a target resume, rewrites relevant bullet points per role, and generates tailored cover letters on demand. An automated overnight pipeline runs daily on a $7/month VPS: LinkedIn and Indeed scraped in parallel, roles scored with Claude Haiku, resumes tailored with Sonnet, PDFs rendered and emailed as a morning digest.',
+      'A full-stack automation tool that handles everything a job seeker does manually, at machine speed. Scrapes fresh listings from multiple boards via Apify, ATS-scores each against a target resume, rewrites relevant bullet points per role, and generates tailored cover letters on demand. An automated overnight pipeline runs daily on a $7/month VPS: LinkedIn and Indeed scraped in parallel, roles scored with Claude Haiku, resumes tailored with Sonnet, PDFs rendered and emailed as a morning digest.',
     tech: ['React', 'Express', 'Node.js', 'Claude API', 'Apify'],
     github: 'https://github.com/gnanendrart/job-hunt-agent',
     demo: 'https://github.com/gnanendrart/job-hunt-agent',
@@ -78,7 +78,7 @@ export default function Projects() {
           <h2 className="text-2xl md:text-3xl font-bold text-slate-100">Featured Projects</h2>
           <div className="flex-1 h-px bg-cyan-500/15 max-w-xs" />
         </div>
-        <p className="text-slate-600 text-sm mb-12 pl-9">Things I built that run in production - not just on localhost.</p>
+        <p className="text-slate-600 text-sm mb-12 pl-9">Things I built that run in production, not just on localhost.</p>
 
         <div className="grid lg:grid-cols-2 gap-6">
           {PROJECTS.map((p, i) => (

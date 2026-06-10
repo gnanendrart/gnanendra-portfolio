@@ -11,11 +11,11 @@ const EXPERIENCE = [
     location: 'Remote',
     current: false,
     bullets: [
-      'Traced pipeline discrepancies across 1.5M+ records to facility and organization ID mismatches, bringing legacy SAS and 1CDP platforms into full record parity - weekly rate-comparison error rate: zero.',
+      'Traced pipeline discrepancies across 1.5M+ records to facility and organization ID mismatches, bringing legacy SAS and 1CDP platforms into full record parity. Weekly rate-comparison error rate: zero.',
       'Built PySpark pipelines on the 1CDP platform processing 3M+ records weekly across 6 facility types, replacing 5 hours of manual SQL work and enabling analytics to scale to national reporting.',
       'Engineered Python and SQL validation across the Influenza Vaccination Pathway that intercepted 80% of data quality issues before federal submission, cutting rework by 15%.',
       'Produced weekly and annual vaccination coverage reporting across 15,000+ sites for national CDC reporting.',
-      'Identified and eliminated a recurring group-upload error in RPV surveillance affecting a multi-facility hospital group - repeat error rate: zero.',
+      'Identified and eliminated a recurring group-upload error in RPV surveillance affecting a multi-facility hospital group. Repeat error rate: zero.',
     ],
     tech: ['PySpark', 'Python', 'SQL', 'SAS', 'Azure Data Lake', 'Databricks'],
   },
