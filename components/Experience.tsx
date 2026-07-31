@@ -14,6 +14,7 @@ const EXPERIENCE = [
       'Traced pipeline discrepancies across 1.5M+ records to facility and organization ID mismatches, bringing legacy SAS and 1CDP platforms into full record parity. Weekly rate-comparison error rate: zero.',
       'Built PySpark pipelines on the 1CDP platform processing 3M+ records weekly across 6 facility types, replacing 5 hours of manual SQL work and enabling analytics to scale to national reporting.',
       'Engineered Python and SQL validation across the Influenza Vaccination Pathway that intercepted 80% of data quality issues before federal submission, cutting rework by 15%.',
+      'Coauthored 2 peer-reviewed CDC MMWR publications on NHSN surveillance data (48M+ records, 5,200+ hospitals), translating findings into governance-aligned reporting for CMS.',
       'Produced weekly and annual vaccination coverage reporting across 15,000+ sites for national CDC reporting.',
       'Identified and eliminated a recurring group-upload error in RPV surveillance affecting a multi-facility hospital group. Repeat error rate: zero.',
     ],
