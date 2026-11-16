@@ -1,41 +1,61 @@
-import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
+import type { Metadata, Viewport } from 'next';
+import { Figtree, Source_Serif_4 } from 'next/font/google';
+import { site } from '@/content/site';
 import './globals.css';
 
-const inter = Inter({
+const figtree = Figtree({
   subsets: ['latin'],
-  variable: '--font-inter',
+  variable: '--font-figtree',
+  display: 'swap',
+});
+
+const sourceSerif = Source_Serif_4({
+  subsets: ['latin'],
+  weight: ['600'],
+  variable: '--font-source-serif',
   display: 'swap',
 });
 
 export const metadata: Metadata = {
-  title: 'Gnanendra Reddy | Senior Data Analyst',
-  description:
-    'Senior Data Analyst with 8+ years building reliable data pipelines, catching quality issues at scale, and shipping AI-augmented analytics tooling. Previously CDC, Teladoc, Cognizant.',
-  keywords: [
-    'Data Analyst',
-    'Data Engineer',
-    'PySpark',
-    'SQL',
-    'Python',
-    'Power BI',
-    'CDC',
-    'Teladoc',
-    'Calgary',
-    'Canada',
+  metadataBase: new URL(site.url),
+  title: site.title,
+  description: site.description,
+  alternates: { canonical: '/' },
+  openGraph: {
+    type: 'website',
+    url: '/',
+    siteName: site.name,
+    title: site.title,
+    description: site.description,
+    locale: 'en_CA',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: site.title,
+    description: site.description,
+  },
+};
+
+export const viewport: Viewport = {
+  themeColor: [
+    { media: '(prefers-color-scheme: light)', color: '#fbfbfd' },
+    { media: '(prefers-color-scheme: dark)', color: '#0f1630' },
   ],
 };
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+// Applies a saved dark theme before first paint so the page never flashes.
+const themeScript = `try{if(localStorage.getItem('theme')==='dark'){document.documentElement.dataset.theme='dark'}}catch(e){}`;
+
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={inter.variable}>
-      <body className="font-sans antialiased bg-[#080c14] text-slate-100">
-        {children}
-      </body>
+    <html lang="en" className={`${figtree.variable} ${sourceSerif.variable}`} suppressHydrationWarning>
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: themeScript }} />
+        <noscript>
+          <style>{`.js-only{display:none!important}`}</style>
+        </noscript>
+      </head>
+      <body className="font-sans">{children}</body>
     </html>
   );
 }
