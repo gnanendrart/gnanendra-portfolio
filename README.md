@@ -1,69 +1,61 @@
 # gnanendra-portfolio
 
-Personal portfolio for **Gnanendra Reddy Tugu Yagama Reddy** - Senior Data Analyst specializing in data quality engineering, pipeline reliability, and AI-augmented analytics.
+Personal portfolio for **Gnanendra Reddy Tugu**, a senior data analyst who builds AI tools.
 
-Built with Next.js 14 (App Router) and Tailwind CSS. Dark mode, fully responsive, no external dependencies beyond Next.js core.
+Single page, server-rendered, light and dark themes.
 
-## Local Setup
+## Local setup
 
 ```bash
-# Install dependencies
 npm install
-
-# Start the dev server
 npm run dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000).
 
-## Production Build
+## Checks
 
 ```bash
 npm run build
-npm start
+npm run lint
 ```
 
 ## Stack
 
-- **Framework:** Next.js 14 (App Router)
-- **Styling:** Tailwind CSS 3
+- **Framework:** Next.js 16 (App Router)
+- **Styling:** Tailwind CSS 3, colours as CSS variables
 - **Language:** TypeScript
-- **Animations:** CSS transitions + Intersection Observer API (no extra libraries)
-- **Fonts:** Inter via `next/font/google`
+- **Fonts:** Source Serif 4 and Figtree via `next/font/google`
 
-## Project Structure
+No environment variables are required.
+
+## Structure
 
 ```
 gnanendra-portfolio/
 ├── app/
-│   ├── layout.tsx          # Root layout, metadata, font config
-│   ├── page.tsx            # Page composition - imports all sections
-│   └── globals.css         # Tailwind directives + global styles
-├── components/
-│   ├── Navigation.tsx      # Sticky nav, active-section tracking, mobile drawer
-│   ├── Hero.tsx            # Full-viewport hero with dot-grid bg and metric badges
-│   ├── Stats.tsx           # Animated metric counters (Intersection Observer)
-│   ├── About.tsx           # Two-column narrative + focus areas + quick facts
-│   ├── Projects.tsx        # Featured project cards with tech stack badges
-│   ├── Experience.tsx      # Vertical timeline with education strip
-│   ├── Skills.tsx          # Colour-coded skill group cards
-│   ├── Contact.tsx         # Contact CTA + social link cards
-│   └── Footer.tsx          # Minimal footer
-├── package.json
-├── next.config.js
-├── tailwind.config.js
-├── postcss.config.js
-└── tsconfig.json
+│   ├── layout.tsx            # Fonts, metadata, theme script
+│   ├── page.tsx              # Section order
+│   ├── globals.css           # Theme tokens and base styles
+│   ├── icon.svg              # Favicon
+│   └── opengraph-image.tsx   # Share image
+├── components/               # Layout only, no copy
+├── content/                  # All copy and numbers
+│   ├── site.ts               # Name, links, hero and about text
+│   ├── cases.ts              # The three cases
+│   ├── projects.ts           # AI tools and data projects
+│   ├── experience.ts         # Roles and education
+│   └── skills.ts             # Skill groups
+└── public/
+    └── Gnanendra_Reddy_Tugu_Resume.pdf
 ```
 
-## Sections
+## Editing content
 
-| Section | ID | Content |
-|---|---|---|
-| Hero | - | Name, tagline, key metric badges, CTAs |
-| Stats | - | Animated counters: 97% error reduction, 1.5M+ records, 3M+/wk, 80% interception |
-| About | `#about` | Narrative bio, focus areas, quick facts, awards |
-| Projects | `#projects` | AI Data Quality Checker, AI Job Search Agent |
-| Experience | `#experience` | CDC (×2), Teladoc, Cognizant + education |
-| Skills | `#skills` | 6 skill groups: languages, platforms, cloud/ETL, BI, AI/automation, frontend |
-| Contact | `#contact` | Email CTA + LinkedIn / GitHub / Email links |
+Every word and number on the page lives in `content/`. To update a project, a role or a link, edit the matching file there. Components do not need to change.
+
+To replace the resume, overwrite `public/Gnanendra_Reddy_Tugu_Resume.pdf`.
+
+## Theme
+
+Colours are defined once in `app/globals.css` under `:root` (light) and `[data-theme='dark']`. The toggle in the header saves the choice in the browser.

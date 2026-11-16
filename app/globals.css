@@ -2,66 +2,110 @@
 @tailwind components;
 @tailwind utilities;
 
-* {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
+:root {
+  --bg: #fbfbfd;
+  --surface: #ffffff;
+  --text: #101a3a;
+  --muted: #3c4566;
+  --border: #d9ddeb;
+  --accent: #2447d6;
+  --on-accent: #ffffff;
+  --pass: #1f7a55;
+  color-scheme: light;
+}
+
+[data-theme='dark'] {
+  --bg: #0f1630;
+  --surface: #172046;
+  --text: #e8ebf7;
+  --muted: #b4bbd6;
+  --border: #2c3767;
+  --accent: #9db2ff;
+  --on-accent: #0f1630;
+  --pass: #7fd8a8;
+  color-scheme: dark;
 }
 
 html {
   scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
 }
 
 body {
-  background-color: #080c14;
-  color: #f8fafc;
+  background-color: var(--bg);
+  color: var(--text);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* Custom scrollbar */
-::-webkit-scrollbar {
-  width: 5px;
-}
-
-::-webkit-scrollbar-track {
-  background: #080c14;
-}
-
-::-webkit-scrollbar-thumb {
-  background: rgba(6, 182, 212, 0.4);
-  border-radius: 3px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: rgba(6, 182, 212, 0.7);
-}
-
-/* Selection */
 ::selection {
-  background-color: rgba(6, 182, 212, 0.25);
-  color: #f8fafc;
+  background-color: var(--accent);
+  color: var(--on-accent);
 }
 
-/* Smooth reveal animation for sections */
-@keyframes revealUp {
-  from {
-    opacity: 0;
-    transform: translateY(28px);
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+/* The key finding inside a sentence */
+.finding {
+  font-weight: 600;
+  color: var(--text);
+  text-decoration: underline;
+  text-decoration-color: var(--accent);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 4px;
+}
+
+/* Text links inside body copy */
+.text-link {
+  font-weight: 600;
+  color: var(--text);
+  text-decoration: underline;
+  text-decoration-color: var(--border);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 4px;
+  transition: color 150ms ease-out, text-decoration-color 150ms ease-out;
+}
+
+.text-link:hover {
+  color: var(--accent);
+  text-decoration-color: var(--accent);
+}
+
+/* Theme toggle shows the icon for the theme you would switch to */
+.icon-sun {
+  display: none;
+}
+
+[data-theme='dark'] .icon-sun {
+  display: block;
+}
+
+[data-theme='dark'] .icon-moon {
+  display: none;
+}
+
+/* Mobile menu: hide the default disclosure marker */
+summary {
+  list-style: none;
+}
+
+summary::-webkit-details-marker {
+  display: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
   }
-  to {
-    opacity: 1;
-    transform: translateY(0);
+
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
   }
-}
-
-.reveal {
-  opacity: 0;
-  transform: translateY(28px);
-  transition: opacity 0.7s ease-out, transform 0.7s ease-out;
-}
-
-.reveal.visible {
-  opacity: 1;
-  transform: translateY(0);
 }
