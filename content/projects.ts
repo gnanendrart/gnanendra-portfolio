@@ -16,6 +16,33 @@ export type Tool = {
 
 export const tools: Tool[] = [
   {
+    id: 'tool-crickql',
+    name: 'CrickQL',
+    status: 'Text-to-SQL shipped',
+    panel: 'Plain-English questions answered with read-only SQL',
+    description:
+      'Ask an IPL cricket question in plain English and get the answer with the SQL that produced it. Claude writes the SQL against a dbt warehouse, and a parser check, a read-only database role and a 10-second timeout keep it read-only.',
+    stages: [
+      {
+        label: 'Pipeline',
+        text: 'Cricsheet to S3, Postgres and Snowflake, modeled in dbt and orchestrated by Airflow. 1,243 matches, 295,732 deliveries, 49 dbt data tests passing on both warehouses.',
+      },
+      {
+        label: 'Text-to-SQL',
+        text: 'Agent served by FastAPI in Docker, with CI on every pull request. 11 of 12 on a holdout set written blind to the agent. The first eval scored 46.7% because the scorer rejected correct answers that came with extra rows.',
+      },
+      { label: 'Next', text: 'Retrieval over the Laws of Cricket, then a router that sends each question to SQL, retrieval or both.' },
+    ],
+    stack: ['Python', 'Claude API', 'dbt', 'PostgreSQL', 'Snowflake', 'Airflow', 'FastAPI', 'Docker', 'AWS S3'],
+    links: [
+      {
+        label: 'Code on GitHub',
+        href: 'https://github.com/gnanendrart/crickql',
+        kind: 'github',
+      },
+    ],
+  },
+  {
     id: 'tool-dqc',
     name: 'AI Data Quality Checker',
     status: 'Open source',
@@ -77,28 +104,6 @@ export const tools: Tool[] = [
         kind: 'github',
       },
     ],
-  },
-  {
-    id: 'tool-crickql',
-    name: 'CrickQL',
-    status: 'Building now',
-    panel: 'Text-to-SQL and RAG over a cricket data pipeline',
-    description:
-      'Ask an IPL cricket question in plain English and get the answer. Number questions go to SQL over a warehouse, rule questions go to retrieval over cricket documents, and questions that need both get both.',
-    stages: [
-      {
-        label: 'Done',
-        text: 'Pipeline from Cricsheet to S3, Postgres and Snowflake, modeled in dbt and orchestrated by Airflow. 1,243 matches, 295,732 deliveries, 49 dbt data tests passing on both warehouses.',
-      },
-      {
-        label: 'In progress',
-        text: 'Text-to-SQL agent with a read-only database role and an evaluation set.',
-      },
-      { label: 'Planned', text: 'Retrieval layer and a router that picks SQL, retrieval or both.' },
-    ],
-    stack: ['Python', 'PostgreSQL', 'Snowflake', 'dbt', 'Airflow', 'AWS S3', 'Claude API'],
-    links: [],
-    note: 'The repository goes public when the text-to-SQL agent ships.',
   },
 ];
 

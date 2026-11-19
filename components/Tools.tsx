@@ -9,7 +9,7 @@ export default function Tools() {
           AI tools
         </h2>
         <p className="mt-4 max-w-[62ch] text-lg leading-[1.55] text-muted">
-          Built on the Claude API. Three are finished and one is in progress.
+          Built on the Claude API. All four are live, and CrickQL's retrieval layer is in progress.
         </p>
 
         <div className="mt-12 grid gap-x-16 gap-y-14 lg:grid-cols-2">
